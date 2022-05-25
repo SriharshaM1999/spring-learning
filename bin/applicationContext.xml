@@ -11,14 +11,29 @@
     <!-- <context:property-placeholder location-="classpath:sport.properties"/> -->
 
 
+    <bean id='serviceID' class='com.sriharsha.sprintlearning.serviceClass'/>
+
+    <bean id='classID' class='com.sriharsha.springlearning.userClass'>
+            <!-- set up constructor injection -->
+            <constructor-arg ref='serviceID'/>
+
+            <!-- set up setter injection -->
+            <property name='setterInjector' ref ='serviceID'/>
+            
+            <!-- injecting the literalValue -->
+            <property name='team' value='apple'/>
+    </bean>
+
+
+    <bean id="id" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+          p:location="/WEB-INF/spring.properties"/>
 
           
     <bean id='helperClass' class='com.sriharsha.springlearning.HelperClass'/>
 
     <bean id='BaseBallCoach' class='com.sriharsha.springlearning.BaseBallCoach'>
-        <!-- you can uncomment only one of the below lines; -->
         <!-- <constructor-arg ref='helperClass'/> -->
-        <!-- <property name='isHeGood' ref='helperClass' /> -->
+        <property name='isHeGood' ref='helperClass' />
     </bean>
 
 </beans>
