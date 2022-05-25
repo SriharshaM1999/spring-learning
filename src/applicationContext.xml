@@ -16,7 +16,7 @@
     <bean id='helperClass' class='com.sriharsha.springlearning.HelperClass'/>
 
     <bean id='BaseBallCoach' class='com.sriharsha.springlearning.BaseBallCoach'>
-        you can uncomment only one of the below lines;
+        <!-- you can uncomment only one of the below lines; -->
         <!-- <constructor-arg ref='helperClass'/> -->
         <!-- <property name='isHeGood' ref='helperClass' /> -->
     </bean>
